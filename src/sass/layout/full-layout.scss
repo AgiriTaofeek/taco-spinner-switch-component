@@ -1,0 +1,79 @@
+@use "../abstracts/variables" as *;
+
+// App container
+.app-container {
+  background: $lighter;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+// App
+.app-frame {
+  background: $lightest;
+  box-shadow: $box-shadow;
+  height: $app-height;
+  margin: auto;
+  overflow: auto;
+  width: $app-width;
+}
+
+// Page
+.page {
+  padding: $app-padding;
+}
+
+// Taco button
+.spin-btn {
+  display: block;
+  font-size: 80px;
+  height: 140px;
+  width: 100%;
+  margin-bottom: 15px;
+
+  // Spin that taco
+  &.spin {
+    .spinner {
+      animation: spin 0.5s linear infinite;
+      display: inline-block; //transform doesn't work on inline element
+    }
+  }
+  &.jiggle {
+    .spinner {
+      animation: jiggle 0.5s linear infinite;
+      display: inline-block; //transform doesn't work on inline element
+    }
+  }
+}
+
+// Burrito button
+#burrito-btn {
+  background-color: #f06b4e;
+}
+
+// Spin
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jiggle {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  75% {
+    transform: translateX(10px);
+  }
+}

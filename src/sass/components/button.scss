@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as *;
+// Buttons
+.btn,
+button {
+  background: $dark;
+  border: 0;
+  border-radius: $radius;
+  box-shadow: inset 0 ($radius * -1) 0 transparentize($darkest, 0.85);
+  color: $lightest;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.125em;
+  font-weight: 200;
+  height: $btn-size;
+  line-height: $btn-size;
+  padding: 0 1em;
+  position: relative;
+  text-shadow: $text-shadow;
+  transition: background-color $t ease, box-shadow $t ease, transform $t ease;
+
+  &:focus,
+  &:hover {
+    background-color: darken($dark, 2%);
+  }
+
+  &:active {
+    box-shadow: inset 0 -1px 0 transparentize($darkest, 0.85);
+    transform: scale(0.98);
+  }
+
+  // Button styles
+  &.light {
+    background-color: $light;
+  }
+
+  &.medium {
+    background-color: $medium;
+  }
+
+  &.info {
+    background-color: $info;
+  }
+
+  &.danger {
+    background-color: $danger;
+  }
+
+  &.success {
+    background-color: $success;
+  }
+
+  &.warning {
+    background-color: $warning;
+  }
+
+  &.primary {
+    background-color: $primary;
+  }
+}
